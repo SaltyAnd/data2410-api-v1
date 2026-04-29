@@ -135,7 +135,8 @@ public class StudentsController(IConfiguration config) : ControllerBase
     [HttpGet("report")]
     public async Task<ActionResult<List<Course>>> Report()
     {
-        // Write code for the report generation logic.
+        await CalculateGrades();
+
         var courses = new List<Course>();
         using var conn = new SqlConnection(_connectionString);
         await conn.OpenAsync();
