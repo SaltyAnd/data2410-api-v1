@@ -1,10 +1,10 @@
 public class Course
 {
-    public string courseName { get; set; } = string.Empty;    
+    required public string courseName { get; set; }
 
     public int totalStudents { get; set; }
 
     public int averageMarks { get; set; }
 
-    public GradeDistribution? gradeDistribution { get; set; } 
+    required public GradeDistribution gradeDistribution { get; set; } 
 }
